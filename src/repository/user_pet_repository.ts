@@ -1,4 +1,4 @@
-import { AbstractRepository, EntityRepository, MoreThan } from "typeorm";
+import { AbstractRepository, EntityRepository, MoreThan } from "typeorm"
 import { UserPet } from "../entity/user_pet.entity"
 
 @EntityRepository(UserPet)

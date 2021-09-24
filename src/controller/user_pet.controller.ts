@@ -1,6 +1,6 @@
-import { Controller, Get, Post, Query, Req } from "@nestjs/common";
-import { UserPet } from "../entity/user_pet.entity";
-import { UserPetService } from "../service/user_pet_service";
+import { Controller, Get, Post, Query, Req } from "@nestjs/common"
+import { UserPet } from "../entity/user_pet.entity"
+import { UserPetService } from "../service/user_pet_service"
 
 
 @Controller('/')

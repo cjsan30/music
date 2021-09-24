@@ -50,5 +50,4 @@ export class User {
 		nullable: true
 	})
 	deposit: number
-    
 }
