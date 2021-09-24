@@ -27,4 +27,13 @@ export class UserPetService {
     public async insertUserPet(userPet: UserPet): Promise<UserPet> {
         return await this.userPetRepository.insertUserPet(userPet)
     }
+
+    /**
+     * input param id than execute findUserPet 
+     * @param id 
+     * @returns 
+     */
+    public async getUserPet(id: number): Promise<UserPet> {
+        return await this.userPetRepository.findUserPet(id)
+    }
 }
