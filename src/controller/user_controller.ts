@@ -30,4 +30,13 @@ export class UserController {
 		const user = req.body as User
 		return this.userService.insertUser(user)
 	}
+
+	/**
+	 * Client access @Get url then execute getUserIdMale() in userService
+	 * @returns 
+	 */
+	@Get('/user/male')
+	public async getSongMale(): Promise<User[]> {
+		return this.userService.getUserIdMale()
+	}
 }
