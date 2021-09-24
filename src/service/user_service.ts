@@ -27,4 +27,13 @@ export class UserService {
 	public async insertUser(user: User): Promise<User> {
 		return await this.userRepository.insertUser(user)
 	}
+
+	/**
+	 * receive id and select user_id in User Table
+	 * @param id 
+	 * @returns 
+	 */
+	public async getUser(id: number): Promise<User> {
+		return await this.userRepository.findUser(id)
+	}
 }
