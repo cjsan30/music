@@ -1,4 +1,4 @@
-import { AbstractRepository, EntityRepository } from "typeorm";
+import { AbstractRepository, EntityRepository, MoreThan } from "typeorm";
 import { UserPet } from "../entity/user_pet.entity"
 
 @EntityRepository(UserPet)
@@ -24,5 +24,17 @@ export class UserRepository extends AbstractRepository<UserPet> {
      */
     public async insertUserPet(userPet: UserPet): Promise<UserPet> {
         return await this.repository.save(userPet)
+    }
+
+    /**
+     * return pet id where age > 2
+     * @returns 
+     */
+    public async findUserPetAgeMT3(): Promise<UserPet[]> {
+        return await this.repository.find({
+            where: {
+                age: MoreThan(2)
+            }
+        })
     }
 }
