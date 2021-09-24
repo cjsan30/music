@@ -16,4 +16,13 @@ export class UserRepository extends AbstractRepository<UserPet> {
 			}
 		})
 	}
+
+    /**
+     * insert pet infor to Pet table
+     * @param userPet 
+     * @returns 
+     */
+    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
+        return await this.repository.save(userPet)
+    }
 }
