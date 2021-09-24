@@ -18,4 +18,13 @@ export class UserService {
 	public async findUserIdMale(): Promise<User[]> {
 		return await this.userRepository.findUserIdMale()
 	}
+
+	/**
+	 * user를 입력받아 table로 insert
+	 * @param user 
+	 * @returns 
+	 */
+	public async insertUser(user: User): Promise<User> {
+		return await this.userRepository.insertUser(user)
+	}
 }
