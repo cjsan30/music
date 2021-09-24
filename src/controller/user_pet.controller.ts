@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from "@nestjs/common";
+import { Controller, Get, Post, Query, Req } from "@nestjs/common";
 import { UserPet } from "../entity/user_pet.entity";
 import { UserPetService } from "../service/user_pet_service";
 
@@ -18,5 +18,16 @@ export class UserPetController {
 	@Get('/userpet') 
 	public async getUserPet(@Query('id') id): Promise<UserPet> {
 		return this.userPetService.getUserPet(Number(id))
+	}
+
+	/**
+	 * input pet infor Post return insertUsePet
+	 * @param req 
+	 * @returns 
+	 */
+	@Post('/userpet')
+	public async insertUserPet(@Req() req): Promise<UserPet> {
+		const userpet = req.body as UserPet
+		return this.userPetService.insertUserPet(userpet)
 	}
 }
