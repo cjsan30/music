@@ -6,7 +6,7 @@ import { User } from '../entity/user.entity'
 export class UserRepository extends AbstractRepository<User> {
 	
 	/**
-	 * receive parameter id and return id from song table
+	 * receive parameter id and return user id from User table
 	 * @param id 
 	 * @returns 
 	 */
