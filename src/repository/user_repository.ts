@@ -1,5 +1,5 @@
 import { AbstractRepository, EntityRepository } from "typeorm";
-import { User } from "../entity/user.eneity";
+import { User } from "../entity/user.entity";
 
 @EntityRepository(User)
 export class UserRepository extends AbstractRepository<User> {
@@ -24,5 +24,17 @@ export class UserRepository extends AbstractRepository<User> {
 	 */
 	public async insertUser(user: User): Promise<User> {
 		return await this.repository.save(user)
+	}
+
+	/**
+	 * Table에서 sex가 T인 user id를 반환
+	 * @returns 
+	 */
+	public async findUserIdMale(): Promise<User[]> {
+		return await this.repository.find({
+			where: {
+				sex: "T"
+			}
+		})
 	}
 }

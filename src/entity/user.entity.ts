@@ -37,7 +37,7 @@ export class User {
 		name: 'sex',
 		nullable: false
 	})
-	sex: boolean
+	sex: string
 
 	@Column('int', {
 		name: 'age',
