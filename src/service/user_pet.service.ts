@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm"
 import { UserPet } from "../entity/user_pet.entity"
-import { UserPetRepository } from "../repository/user_pet_repository"
+import { UserPetRepository } from "../repository/user_pet.repository"
 
 @Injectable()
 export class UserPetService {
@@ -24,8 +24,8 @@ export class UserPetService {
      * @param userPet 
      * @returns 
      */
-    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
-        return await this.userPetRepository.insertUserPet(userPet)
+    public async insertUserPet(userPet: UserPet, userid: number): Promise<UserPet> {
+        return await this.userPetRepository.insertUserPet(userPet, userid)
     }
 
     /**

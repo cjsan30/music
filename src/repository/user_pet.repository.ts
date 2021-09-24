@@ -22,7 +22,7 @@ export class UserPetRepository extends AbstractRepository<UserPet> {
      * @param userPet 
      * @returns 
      */
-    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
+    public async insertUserPet(userPet: UserPet, userId: number): Promise<UserPet> {
         return await this.repository.save(userPet)
     }
 
