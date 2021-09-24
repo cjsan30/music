@@ -16,4 +16,13 @@ export class UserRepository extends AbstractRepository<User> {
 			}
 		})
 	}
+
+	/**
+	 * User 타입의 user를 입력받아 테이블에 Insert
+	 * @param user 
+	 * @returns 
+	 */
+	public async insertUser(user: User): Promise<User> {
+		return await this.repository.save(user)
+	}
 }
