@@ -17,4 +17,13 @@ export class UserRepository extends AbstractRepository<User> {
 			}
 		})
 	}
+
+	/**
+	 * insert user infor to User Table
+	 * @param user 
+	 * @returns 
+	 */
+	public async insertUser(user: User): Promise<User> {
+		return await this.repository.save(user)
+	}
 }
