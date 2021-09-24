@@ -2,7 +2,7 @@ import { AbstractRepository, EntityRepository, MoreThan } from "typeorm";
 import { UserPet } from "../entity/user_pet.entity"
 
 @EntityRepository(UserPet)
-export class UserRepository extends AbstractRepository<UserPet> {
+export class UserPetRepository extends AbstractRepository<UserPet> {
     
     /**
      * receive parameter id and return pet id from Pet table
