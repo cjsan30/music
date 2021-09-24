@@ -15,7 +15,7 @@ export class UserPetService {
      * call findUserPetAgeMT3 in userPetRepository async
      * @returns 
      */
-    public async findUserPetAgeMT3(): Promise<UserPet[]> {
+    public async getUserPetAgeMT3(): Promise<UserPet[]> {
         return await this.userPetRepository.findUserPetAgeMT3()
     }
 
