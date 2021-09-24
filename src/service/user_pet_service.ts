@@ -19,5 +19,12 @@ export class UserPetService {
         return await this.userPetRepository.findUserPetAgeMT3()
     }
 
-    
+    /**
+     * input param userPet than exeucute insertUserPet 
+     * @param userPet 
+     * @returns 
+     */
+    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
+        return await this.userPetRepository.insertUserPet(userPet)
+    }
 }
