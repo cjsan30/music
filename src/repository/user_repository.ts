@@ -26,4 +26,16 @@ export class UserRepository extends AbstractRepository<User> {
 	public async insertUser(user: User): Promise<User> {
 		return await this.repository.save(user)
 	}
+
+	/**
+	 * return user id where sex is T
+	 * @returns 
+	 */
+	public async findUserIdMale(): Promise<User[]> {
+		return await this.repository.find({
+			where: {
+				sex: 'T'
+			}
+		})
+	}
 }
