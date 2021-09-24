@@ -11,6 +11,10 @@ export class UserService {
 		private readonly userRepository: UserRepository
 	) { }
 
+	/**
+	 * return user Id where sex is T
+	 * @returns 
+	 */
 	public async findUserIdMale(): Promise<User[]> {
 		return await this.userRepository.findUserIdMale()
 	}
