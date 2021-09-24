@@ -30,4 +30,13 @@ export class UserPetController {
 		const userpet = req.body as UserPet
 		return this.userPetService.insertUserPet(userpet)
 	}
+	
+	/**
+	 * return pet infor where age > 3
+	 * @returns 
+	 */
+	@Get('/userpet/morethan2')
+	public async getUserPetAgeMT3(): Promise<UserPet[]> {
+		return await this.userPetService.getUserPetAgeMT3()
+	}
 }
