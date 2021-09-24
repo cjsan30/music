@@ -1,5 +1,5 @@
-import { AbstractRepository, EntityRepository } from "typeorm";
-import { User } from "../entity/user.entity";
+import { AbstractRepository, EntityRepository } from "typeorm"
+import { User } from "../entity/user.entity"
 
 @EntityRepository(User)
 export class UserRepository extends AbstractRepository<User> {
