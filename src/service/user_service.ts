@@ -15,7 +15,7 @@ export class UserService {
 	 * return user Id where sex is T
 	 * @returns 
 	 */
-	public async findUserIdMale(): Promise<User[]> {
+	public async getUserIdMale(): Promise<User[]> {
 		return await this.userRepository.findUserIdMale()
 	}
 
