@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
+import { User } from "./user.entity"
 
 @Entity()
 export class UserPet {
@@ -15,17 +16,11 @@ export class UserPet {
 	})
     animal: string
 
-	@Column('int', {
-		name: 'user_id',
-		nullable: false
-	})
-    userId: number
-
-	@Column('varchar', {
+	@Column('char', {
 		name: 'sex',
 		nullable: false
 	})
-    sex: boolean
+    sex: string
 
 	@Column('varchar', {
 		name: 'color',
@@ -38,5 +33,11 @@ export class UserPet {
 		nullable: false
 	})
     age: number
+
+	@ManyToOne(() => User)
+	@JoinColumn({
+		name: "user_id"
+	})
+    user: User
 
 }
