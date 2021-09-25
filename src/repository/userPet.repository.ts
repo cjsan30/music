@@ -1,5 +1,6 @@
+import { User } from "src/entity/user.entity"
 import { AbstractRepository, EntityRepository, MoreThan } from "typeorm"
-import { UserPet } from "../entity/user_pet.entity"
+import { UserPet } from "../entity/userPet.entity"
 
 @EntityRepository(UserPet)
 export class UserPetRepository extends AbstractRepository<UserPet> {
@@ -9,11 +10,10 @@ export class UserPetRepository extends AbstractRepository<UserPet> {
      * @param id 
      * @returns 
      */
-    public async findUserPet(id: number): Promise<UserPet> {
-		return await this.repository.findOne({
-			where: {
-				id: id
-			}
+    public async findUserPet(id: number): Promise<UserPet[]> {
+		return await this.repository.find({
+			where: { id: id},
+            relations: ["user"]
 		})
 	}
 
@@ -22,7 +22,7 @@ export class UserPetRepository extends AbstractRepository<UserPet> {
      * @param userPet 
      * @returns 
      */
-    public async insertUserPet(userPet: UserPet, userId: number): Promise<UserPet> {
+    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
         return await this.repository.save(userPet)
     }
 
