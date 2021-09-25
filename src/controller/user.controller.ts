@@ -15,7 +15,7 @@ export class UserController {
 	 * @returns 
 	 */
 	@Get('/user')
-	public async getUser(@Query('id') id): Promise<User> {
+	public async getUser(@Query('id') id): Promise<User[]> {
 		return this.userService.getUser(Number(id))
 	}
 	

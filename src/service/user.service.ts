@@ -33,7 +33,7 @@ export class UserService {
 	 * @param id 
 	 * @returns 
 	 */
-	public async getUser(id: number): Promise<User> {
+	public async getUser(id: number): Promise<User[]> {
 		return await this.userRepository.findUser(id)
 	}
 }

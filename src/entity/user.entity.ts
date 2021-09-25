@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { UserPet } from "./userPet.entity"
 
 @Entity()
@@ -51,4 +51,10 @@ export class User {
 		nullable: true
 	})
 	deposit: number
+
+	@OneToMany(() => UserPet, userpet => userpet.user)
+	@JoinColumn({
+		name: 'id'
+	})
+	userpet: UserPet[]
 }

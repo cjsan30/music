@@ -10,11 +10,10 @@ export class UserRepository extends AbstractRepository<User> {
 	 * @param id 
 	 * @returns 
 	 */
-	public async findUser(id: number): Promise<User> {
-		return await this.repository.findOne({
-			where: {
-				id: id
-			}
+	public async findUser(id: number): Promise<User[]> {
+		return await this.repository.find({
+			where: { id: id },
+			relations: ["userpet"]
 		})
 	}
 
