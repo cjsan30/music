@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm"
-import { UserPet } from "../entity/user_pet.entity"
-import { UserPetRepository } from "../repository/user_pet.repository"
+import { UserPet } from "../entity/userPet.entity"
+import { UserPetRepository } from "../repository/userPet.repository"
 
 @Injectable()
 export class UserPetService {
@@ -24,8 +24,8 @@ export class UserPetService {
      * @param userPet 
      * @returns 
      */
-    public async insertUserPet(userPet: UserPet, userid: number): Promise<UserPet> {
-        return await this.userPetRepository.insertUserPet(userPet, userid)
+    public async insertUserPet(userPet: UserPet): Promise<UserPet> {
+        return await this.userPetRepository.insertUserPet(userPet)
     }
 
     /**
@@ -33,7 +33,7 @@ export class UserPetService {
      * @param id 
      * @returns 
      */
-    public async getUserPet(id: number): Promise<UserPet> {
+    public async getUserPet(id: number): Promise<UserPet[]> {
         return await this.userPetRepository.findUserPet(id)
     }
 }
